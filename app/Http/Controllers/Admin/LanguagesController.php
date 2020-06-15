@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Models\Language;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\LanguageRequest;
 
 class LanguagesController extends Controller
 {
@@ -26,18 +27,16 @@ class LanguagesController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.languages.create');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
+    public function store(LanguageRequest $request)
     {
-        //
+
+
+            Language::create($request->except(['_token']));
+            return redirect()->route('admin.languages')->with(['success' => 'تم حفظ اللغة بنجاح']);
+
     }
 
     /**

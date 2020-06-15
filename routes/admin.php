@@ -12,6 +12,7 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+define('PAGINATION_COUNT',10);
 
 Route::group(['namespace'=>'Admin','middleware' => 'auth:admin'], function() {
     Route::get('/', 'DashboardController@index') -> name('admin.dashboard');

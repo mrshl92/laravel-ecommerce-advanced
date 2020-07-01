@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class MainCategorie extends Model
+class MainCategory extends Model
 {
     protected $table = 'main_categories';
 

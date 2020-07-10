@@ -90,7 +90,6 @@ class MainCategoriesController extends Controller
 
     }
 
-
     public function edit($mainCat_id)
     {
            //get specific categories and its translations
